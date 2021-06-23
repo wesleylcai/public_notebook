@@ -209,7 +209,7 @@ Objective: Why does boosting work? What are loss functions?
 
 ## Boosting
 
-[Why boosting?](https://jialinyi94.github.io/CIS_625_Final_Project.pdf)
+[Why boosting?](https://jialinyi94.github.io/CIS_625_Final_Project.pdf) TL;DR Because it can give you the ground truth model for anything. It can give you the math formula to describe "dog."
 
 1. From a statistical point of view, "boosting is minimizing the empirical risk for an asymmetric loss function that penalizes more heavily on incorrect classifications" - Jialin Yi.
 2. [VC theory](https://en.wikipedia.org/wiki/Vapnik–Chervonenkis_theory) explains why minimizing empirical risk is **consistent** and thus works for classification.
