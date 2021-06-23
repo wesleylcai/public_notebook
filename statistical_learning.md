@@ -135,7 +135,10 @@ Regression model details
 2. Step 2: Loop to generate M trees
     1. For m = 1 to M, in practice M = 100 trees
         1. Compute ![f15]
-            1. This just becomes (-1)*-(Observed-Predicted) = Residual
+            1. This just becomes (-1)*-(Observed-Predicted) = (Observed-Predicted) = Residual
+            2. Then plug in F_m-1(x) for predicted, which for F_0 is the initial constant
+            3. Then do this for each row per tree (r_im)
+            4. The derivative is the "gradient" in "gradient boost"
 
 
 
