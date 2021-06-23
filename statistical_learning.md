@@ -4,7 +4,10 @@
 [Gradient Boost](#gradient-boost)
 
 [Bias and Variance](#bias-and-variance)
+
+[Boosting and Loss Functions](#boosting-and-loss-functions)
 <!---toc--->
+
 
 
 # Notes
@@ -194,6 +197,18 @@ Objective:
     1. Linear regression for a log relationship = low variance. Because the error would be consistent across log datasets with some randomness. Polynomial regression = high variance. Because error would vary across different log datasets. It would fit some datasets well and some poorly. This is because it fit so well to the training data.
         1. Polynomial = "Overfit"
 3. Finding a sweet spot between simple model and overfitted model = regularization, boosting, bagging.
+
+## Elements of Statistical Learning
+
+
+## When to use?
+
+# Boosting and Loss Functions
+
+Objective: 
+
+## Statquest
+
 
 ## Elements of Statistical Learning
 
