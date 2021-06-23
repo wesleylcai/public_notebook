@@ -1,16 +1,7 @@
-# All papers
-Test
+# Table of Contents
+[Meta-analysis of tumor- and T cell-intrinsic mechanisms of sensitization to checkpoint inhibition](#meta-analysis-of-tumor--and-T-cell-intrinsic-mechanisms-of-sensitization-to-checkpoint-inhibition)
+<!---toc--->
 
-test
-
-test
-
-test
-
-test
-
-test
-# Hello world
 ### Meta-analysis of tumor- and T cell-intrinsic mechanisms of sensitization to checkpoint inhibition
 PMID: [33508232](https://pubmed.ncbi.nlm.nih.gov/33508232/)
 
@@ -26,6 +17,3 @@ First and last authors: Kevin Litchfield, Charles Swanton
 8. Loss of 9q34 was associated with sensitization - TRAF2 gene is important. Selective pressure comes from other genes on chr9, including CDKN2A
 9. CCND1 amplification associated with CPI resistance
 
-[All papers](#all-papers)
-
-[Hello World](#hello-world)
