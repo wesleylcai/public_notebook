@@ -92,6 +92,21 @@ Objective: Understanding this to get into the guts of XGBoost
 
 Table 1
 
+Concept
+
+1. Gradient boost is similar to Adaboost except it uses leaf instead of stump
+2. Then builds tree around leaf, constrained by pre-determined number of leaves. Unlike Adaboost, it scales all trees the same.
+
+Algorithm
+
+1. First leaf is the average of all weights (71.2)
+2. Calculate pseudo-residuals (pseudo because Gradient boost not linear regression) into another column
+3. Build a tree with column variables to predict residuals
+    a. f more than 1 variable per leaf, calculate average of variables
+
+
+
+
 ## Elements of Statistical Learning
 
 
