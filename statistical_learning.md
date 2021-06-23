@@ -144,6 +144,9 @@ Regression model details
         2. Fit a regression tree to the r_im values and create terminal regions R_Jm for j=1..J_m
             1. Just means use the residuals to create tree where the leaves are R_Jm. If one leaf has more than one residual, then average them.
         3. For ![f17] compute ![f18]
+            1. This means that for each leaf in the new tree, calculate the residual ![f18]
+            2. Which means summation of previous residuals of only those data rows that contribute to that leaf
+            3. <img src="images/statistical_learning/statquest.gradientboost.f1.jpg" width="300">
 
 
 
