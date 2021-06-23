@@ -147,7 +147,7 @@ Regression model details
             1. This means that for each leaf in the new tree, calculate the residual ![f18]
             2. Which means summation of previous residuals of only those data rows that contribute to that leaf
             3. <img src="images/statistical_learning/statquest.gradientboost.f1.jpg" width="150">
-            4. Eventually we minimize gamma so take partial derivative with respect to gamma and set = 0. This again becomes the AVERAGE of new residuals!
+            4. Eventually we minimize gamma so take partial derivative with respect to gamma and set = 0. This again becomes the AVERAGE of new residuals! So in R_2,1 the value is average of 14.7 and 2.7 = 8.7
 
 
 
