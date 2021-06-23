@@ -7,6 +7,8 @@
 <!---toc--->
 
 
+# Notes
+[Documentation for google laTex](https://developers.google.com/chart/infographics/docs/formulas?hl=en)
 
 # AdaBoost
 
