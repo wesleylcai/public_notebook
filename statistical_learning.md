@@ -205,12 +205,19 @@ Objective:
 
 # Boosting and Loss Functions
 
-Objective: 
+Objective: Why does boosting work? What are loss functions?
 
-## Statquest
+## Boosting
 
+[Why boosting?](https://jialinyi94.github.io/CIS_625_Final_Project.pdf)
 
-## Elements of Statistical Learning
+1. From a statistical point of view, "boosting is minimizing the empirical risk for an asymmetric loss function that penalizes more heavily on incorrect classifications" - Jialin Yi.
+2. [VC theory](https://en.wikipedia.org/wiki/Vapnik–Chervonenkis_theory) explains why minimizing empirical risk is consistent and works for classification.
+    1. [Consistency](https://en.wikipedia.org/wiki/Consistency_(statistics)) is a desired property of a statistical procedure as the items in a data set increases indefinitely. A consistent procedure is one such that the outcome of the procedure with unlimited data **should identify the underlying truth.**
+    1. Because we want to minimize expected risk.
+    2. VC Inequality theorem states that empirical risk becomes a good proxy for expected risk as sampling increases.
+
+## Loss Functions
 
 
 ## When to use?
