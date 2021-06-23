@@ -130,7 +130,12 @@ Regression model details
     2. Gamma: predicted value
     3. Summation: add up all loss values
     4. argmin_gamma: find **predicted value** that minimizes sum of loss function
-        1. This is accomplished by taking partial derivative of loss function with respect to **predicted value** and setting = 0
+        1. This is accomplished by taking partial derivative of sum of loss function with respect to **predicted value** and setting = 0
+    5. In this case the initial constant is the same as the average of all predictions. F_0(x) = average(y)
+2. Step 2: Loop to generate M trees
+    1. For m = 1 to M, in practice M = 100 trees
+        1. Compute ![f15]
+
 
 
 ## Elements of Statistical Learning
@@ -144,6 +149,7 @@ Regression model details
 [f12]: https://chart.apis.google.com/chart?cht=tx&chl==-2*\frac{1}{2}*(Observed-Predicted)
 [f13]: https://chart.apis.google.com/chart?cht=tx&chl==-(Observed-Predicted)
 [f14]: https://chart.apis.google.com/chart?cht=tx&chl=F_0(x)=argmin_\gamma\sum_{i=1}^{n}L(y_i,\\;\gamma)
+[f15]: https://chart.apis.google.com/chart?cht=tx&chl=r_im=-\left[\frac{\partial\\;L(y_i,F(x_i))}{\partial\\;F(x_i)}\right]_{F(x)=F_{m-1}(x)}\\;for\\;i=1,\\;...,\\;n
 
 # Bias and Variance
 
