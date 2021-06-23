@@ -149,6 +149,9 @@ Regression model details
             3. <img src="images/statistical_learning/statquest.gradientboost.f1.jpg" width="150">
             4. Eventually we minimize gamma so take partial derivative with respect to gamma and set = 0. This again becomes the AVERAGE of new residuals! So in R_2,1 the value is average of 14.7 and 2.7 = 8.7
         4. Update ![f19]
+            1. This just means to make a new prediction for each sample.
+            2. The greek letter "v" is the learning rate, which we set to 0.1 usually
+            3. <img src="images/statistical_learning/statquest.gradientboost.f2.jpg" width="300">
 
 
 
@@ -167,7 +170,7 @@ Regression model details
 [f16]: https://chart.apis.google.com/chart?cht=tx&chl=-\left[\frac{\partial\\;L(y_i,F(x_i))}{\partial\\;F(x_i)}\right]
 [f17]: https://chart.apis.google.com/chart?cht=tx&chl=j=1,\\;...,J_m
 [f18]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma_{jm}=argmin_\gamma\sum_{x_i\in\\;R_{ij}}^{}L(y_i,\\;F_{m-1}(x_i)%2B\gamma)
-[f19]: https://chart.apis.google.com/chart?cht=tx&chl=F_m(x)=F_{m-1}(x)%2Bv\sum_{j=1}^{J_m}\gamma_{jm}I(x\in\\;R_{jm})
+[f19]: https://chart.apis.google.com/chart?cht=tx&chl=F_m(x)=F_{m-1}(x)%2B\nu\sum_{j=1}^{J_m}\gamma_{jm}I(x\in\\;R_{jm})
 
 
 # Bias and Variance
