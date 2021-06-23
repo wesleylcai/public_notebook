@@ -135,7 +135,7 @@ Regression model details
 2. Step 2: Loop to generate M trees
     1. For m = 1 to M, in practice M = 100 trees
         1. Compute ![f15]
-            1. This just becomes (-1)*-(Observed-Predicted) = (Observed-Predicted) = Residual
+            1. ![f16] just becomes (-1)*-(Observed-Predicted) = (Observed-Predicted) = Residual
             2. Then plug in F_m-1(x) for predicted, which for F_0 is the initial constant
             3. Then do this for each row per tree (r_im)
             4. The derivative is the "gradient" in "gradient boost"
@@ -154,6 +154,7 @@ Regression model details
 [f13]: https://chart.apis.google.com/chart?cht=tx&chl==-(Observed-Predicted)
 [f14]: https://chart.apis.google.com/chart?cht=tx&chl=F_0(x)=argmin_\gamma\sum_{i=1}^{n}L(y_i,\\;\gamma)
 [f15]: https://chart.apis.google.com/chart?cht=tx&chl=r_im=-\left[\frac{\partial\\;L(y_i,F(x_i))}{\partial\\;F(x_i)}\right]_{F(x)=F_{m-1}(x)}\\;for\\;i=1,\\;...,\\;n
+[f16]: https://chart.apis.google.com/chart?cht=tx&chl=\left[\frac{\partial\\;L(y_i,F(x_i))}{\partial\\;F(x_i)}\right]
 
 # Bias and Variance
 
