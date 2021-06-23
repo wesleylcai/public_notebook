@@ -22,7 +22,7 @@ First and last authors: Kevin Litchfield, Charles Swanton
 
 # A review of author name disambiguation techniques for the PubMed bibliographic database
 
-Objective: 
+[Article link](https://journals.sagepub.com/doi/full/10.1177/0165551519888605?casa_token=kIW_km4OtaoAAAAA%3AzGXblIrEvk8RCOqVCQ_401mD5J0rasgpq0v7RlXetAri640TU994wWUO2eAhzzQldLDYkULB4Or7) 
 
 ## Main points
 
