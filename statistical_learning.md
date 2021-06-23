@@ -104,7 +104,7 @@ Algorithm
 
 1. First leaf is the average of all weights (71.2)
 2. Calculate pseudo-residuals (pseudo because Gradient boost not linear regression) into another column
-    1. <img src="images/statistical_learning/statquest.gradientboost.t2.jpg" width="200">
+    1. <img src="images/statistical_learning/statquest.gradientboost.t2.jpg" width="400">
 3. Build a tree with column variables to predict residuals
     1. f more than 1 variable per leaf, calculate average of variables
     2. At this point, the tree is overfit; low bias but high variance.
