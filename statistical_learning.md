@@ -121,6 +121,11 @@ Objective:
 
 ## Statquest
 
+1. Bias = how well a machine learning model can replicate the true underlying relationship in the TRAINING set.
+    a. Linear regression for a log relationship = high bias. Polynomial regression for a log relationship = low bias.
+
+2. Variance = the difference in fits between datasets.
+    a. Polynomial regression would generate more errors across datasets because it fit so well to the training data. So it has high variance.
 
 ## Elements of Statistical Learning
 
