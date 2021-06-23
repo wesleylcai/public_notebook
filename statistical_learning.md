@@ -93,11 +93,12 @@ This looks like it's best for binary classification.
 Objective: Understanding this to get into the guts of XGBoost
 
 ## Statquest
-<img src="images/statistical_learning/statquest.gradientboost.t1.jpg" width="300">
 
 Table 1
 
 Concept: Gradient boost for regression
+
+<img src="images/statistical_learning/statquest.gradientboost.t1.jpg" width="300">
 
 1. Gradient boost is similar to Adaboost except it uses leaf instead of stump
 2. Then builds tree around leaf, constrained by pre-determined number of leaves. Unlike Adaboost, it scales all trees the same.
@@ -153,7 +154,11 @@ Regression model details
             2. The greek letter "v" is the learning rate, which we set to 0.1 usually
             3. <img src="images/statistical_learning/statquest.gradientboost.f2.jpg" width="300">
 
+Concept: Gradient boost for classification
 
+<img src="images/statistical_learning/statquest.gradientboost.t3.jpg" width="300">
+
+1. Similar to logistic regression
 
 ## Elements of Statistical Learning
 
