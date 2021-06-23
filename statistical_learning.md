@@ -117,17 +117,27 @@ Algorithm
 
 Regression model details
 
-1. Differentiable loss function
+1. Input: Data and Differentiable loss function ![f9]
     1. Required for gradient boost
-    2. Most commonly Pseduo-residual = 1/2*(Observed - Predicted)^2
+    2. Most commonly ![f10]
     3. This is similar to loss function in linear regression
-    4. Partial derivative of this loss function with respect to Predicted becomes d/dPredicted (1/2*(Observed - Predicted)^2) = -2(1/2*(Observed - Predicted) = -(Observed - Predicted)
+    4. Partial derivative of this loss function with respect to Predicted becomes
+        1. ![f11]
+        2. ![f12]
+        3. ![f13]
+1. Step 1: Initialize model with constant value: 
 
 
 ## Elements of Statistical Learning
 
 
 ## When to use?
+
+[f9]: https://chart.apis.google.com/chart?cht=tx&chl=L(y,\\;F(x))
+[f10]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{1}{2}*(Observed-Predicted)^2
+[f11]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\partial\\;f}{\partial\\;Predicted}\frac{1}{2}*(Observed-Predicted)^2
+[f12]: https://chart.apis.google.com/chart?cht=tx&chl==-2*\frac{1}{2}*(Observed-Predicted)
+[f13]: https://chart.apis.google.com/chart?cht=tx&chl==-(Observed-Predicted)
 
 # Bias and Variance
 
