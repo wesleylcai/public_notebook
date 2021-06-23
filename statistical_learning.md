@@ -117,11 +117,10 @@ Algorithm
 
 # Bias and Variance
 
-<img src="images/statistical_learning/statquest.terminology.f1.jpg" width="400">
-
 Objective: 
 
 ## Statquest
+<img src="images/statistical_learning/statquest.terminology.f1.jpg" width="400">
 
 1. Bias = how well a machine learning model can replicate the true underlying relationship in the TRAINING set.
     1. Linear regression for a log relationship = high bias. Polynomial regression for a log relationship = low bias.
