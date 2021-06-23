@@ -82,12 +82,15 @@ The I() function must output either -1 or 1, I believe.
 
 #### When to use?
 This looks like it's best for binary classification.
+
 # Gradient Boost
 
-Objective: 
+Objective: Understanding this to get into the guts of XGBoost
 
 ## Statquest
+<img src="images/statistical_learning/statquest.gradientboost.t1.jpg" width="300">
 
+Table 1
 
 ## Elements of Statistical Learning
 
