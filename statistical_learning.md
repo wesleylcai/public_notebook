@@ -148,6 +148,7 @@ Regression model details
             2. Which means summation of previous residuals of only those data rows that contribute to that leaf
             3. <img src="images/statistical_learning/statquest.gradientboost.f1.jpg" width="150">
             4. Eventually we minimize gamma so take partial derivative with respect to gamma and set = 0. This again becomes the AVERAGE of new residuals! So in R_2,1 the value is average of 14.7 and 2.7 = 8.7
+        4. Update ![f19]
 
 
 
@@ -166,6 +167,8 @@ Regression model details
 [f16]: https://chart.apis.google.com/chart?cht=tx&chl=-\left[\frac{\partial\\;L(y_i,F(x_i))}{\partial\\;F(x_i)}\right]
 [f17]: https://chart.apis.google.com/chart?cht=tx&chl=j=1,\\;...,J_m
 [f18]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma_{jm}=argmin_\gamma\sum_{x_i\in\\;R_{ij}}^{}L(y_i,\\;F_{m-1}(x_i)%2B\gamma)
+[f19]: https://chart.apis.google.com/chart?cht=tx&chl=F_m(x)=F_{m-1}(x)%2Bv\sum_{j=1}^{J_m}\gamma_{jm}I(x\in\\;R_{jm})
+
 
 # Bias and Variance
 
