@@ -135,6 +135,7 @@ Regression model details
 2. Step 2: Loop to generate M trees
     1. For m = 1 to M, in practice M = 100 trees
         1. Compute ![f15]
+            1. This just becomes (-1)*-(Observed-Predicted) = Residual
 
 
 
