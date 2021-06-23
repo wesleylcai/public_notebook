@@ -2,7 +2,10 @@
 [Meta-analysis of tumor- and T cell-intrinsic mechanisms of sensitization to checkpoint inhibition](#meta-analysis-of-tumor--and-T-cell-intrinsic-mechanisms-of-sensitization-to-checkpoint-inhibition)
 
 [A review of author name disambiguation techniques for the PubMed bibliographic database](#a-review-of-author-name-disambiguation-techniques-for-the-pubmed-bibliographic-database)
+
+[Statistics versus machine learning](#statistics-versus-machine-learning)
 <!---toc--->
+
 
 
 # Meta-analysis of tumor- and T cell-intrinsic mechanisms of sensitization to checkpoint inhibition
@@ -23,6 +26,13 @@ First and last authors: Kevin Litchfield, Charles Swanton
 # A review of author name disambiguation techniques for the PubMed bibliographic database
 
 [Article link](https://journals.sagepub.com/doi/full/10.1177/0165551519888605?casa_token=kIW_km4OtaoAAAAA%3AzGXblIrEvk8RCOqVCQ_401mD5J0rasgpq0v7RlXetAri640TU994wWUO2eAhzzQldLDYkULB4Or7) 
+
+## Main points
+
+
+# Statistics versus machine learning
+
+PMID: [30100822](https://pubmed.ncbi.nlm.nih.gov/30100822/)
 
 ## Main points
 
