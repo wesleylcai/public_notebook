@@ -125,7 +125,12 @@ Regression model details
         1. ![f11]
         2. ![f12]
         3. ![f13]
-1. Step 1: Initialize model with constant value: 
+1. Step 1: Initialize model with constant value: ![f14]
+    1. L(y, gamma) is loss function
+    2. Gamma: predicted value
+    3. Summation: add up all loss values
+    4. argmin_gamma: find **predicted value** that minimizes sum of loss function
+        1. This is accomplished by taking partial derivative of loss function with respect to **predicted value** and setting = 0
 
 
 ## Elements of Statistical Learning
@@ -138,6 +143,7 @@ Regression model details
 [f11]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\partial\\;f}{\partial\\;Predicted}\frac{1}{2}*(Observed-Predicted)^2
 [f12]: https://chart.apis.google.com/chart?cht=tx&chl==-2*\frac{1}{2}*(Observed-Predicted)
 [f13]: https://chart.apis.google.com/chart?cht=tx&chl==-(Observed-Predicted)
+[f14]: https://chart.apis.google.com/chart?cht=tx&chl=F_0(x)=argmin_\gamma\sum_{i=1}^{n}L(y_i,\\;\gamma)
 
 # Bias and Variance
 
