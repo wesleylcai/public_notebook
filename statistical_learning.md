@@ -104,11 +104,13 @@ Algorithm
 
 1. First leaf is the average of all weights (71.2)
 2. Calculate pseudo-residuals (pseudo because Gradient boost not linear regression) into another column
+    1. <img src="images/statistical_learning/statquest.gradientboost.t2.jpg" width="200">
 3. Build a tree with column variables to predict residuals
-    a. f more than 1 variable per leaf, calculate average of variables
-
-
-
+    1. f more than 1 variable per leaf, calculate average of variables
+    2. At this point, the tree is overfit; low bias but high variance.
+    3. Apply learning rate to scale contribution of new tree (0, 1)
+4. Create new pseudo-residuals with the newly built tree
+5. Build another tree with the newly predicted pseudo-residuals
 
 ## Elements of Statistical Learning
 
@@ -124,6 +126,7 @@ Objective:
 
 1. Bias = how well a machine learning model can replicate the true underlying relationship in the TRAINING set.
     1. Linear regression for a log relationship = high bias. Polynomial regression for a log relationship = low bias.
+    2. Based on residuals.
 2. Variance = the difference in fits between datasets.
     1. Linear regression for a log relationship = low variance. Because the error would be consistent across log datasets with some randomness. Polynomial regression = high variance. Because error would vary across different log datasets. It would fit some datasets well and some poorly. This is because it fit so well to the training data.
         1. Polynomial = "Overfit"
