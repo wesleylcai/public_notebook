@@ -124,8 +124,8 @@ Objective:
 1. Bias = how well a machine learning model can replicate the true underlying relationship in the TRAINING set.
     1. Linear regression for a log relationship = high bias. Polynomial regression for a log relationship = low bias.
 2. Variance = the difference in fits between datasets.
-    1. Polynomial regression would generate more errors across datasets because it fit so well to the training data. So it has high variance.
-
+    1. Linear regression for a log relationship = low variance. Because the error would be consistent across log datasets with some randomness. Polynomial regression = high variance. Because error would vary across different log datasets.This is because it fit so well to the training data.
+    
 ## Elements of Statistical Learning
 
 
