@@ -219,7 +219,7 @@ Objective: Why does boosting work? What are loss functions?
     4. VC Inequality theorem states that empirical risk becomes a good proxy for expected risk as sampling increases.
 
 ## Loss Functions
-
+1. The loss function for Adaboost is an exponential function L(y, f(x)) = exp(-y*f(x)). The loss function for gradient boosting is the partial differential dL/df, where L is the pseudo-residuals.
 
 ## When to use?
 
