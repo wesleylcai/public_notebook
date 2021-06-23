@@ -2,7 +2,10 @@
 [AdaBoost](#adaboost)
 
 [Gradient Boost](#gradient-boost)
+
+[Bias and Variance](#bias-and-variance)
 <!---toc--->
+
 
 
 # AdaBoost
@@ -105,6 +108,18 @@ Algorithm
     a. f more than 1 variable per leaf, calculate average of variables
 
 
+
+
+## Elements of Statistical Learning
+
+
+## When to use?
+
+# Bias and Variance
+
+Objective: 
+
+## Statquest
 
 
 ## Elements of Statistical Learning
