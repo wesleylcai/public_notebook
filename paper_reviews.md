@@ -1,8 +1,11 @@
 # Table of Contents
 [Meta-analysis of tumor- and T cell-intrinsic mechanisms of sensitization to checkpoint inhibition](#meta-analysis-of-tumor--and-T-cell-intrinsic-mechanisms-of-sensitization-to-checkpoint-inhibition)
+
+[A review of author name disambiguation techniques for the PubMed bibliographic database](#a-review-of-author-name-disambiguation-techniques-for-the-pubmed-bibliographic-database)
 <!---toc--->
 
-### Meta-analysis of tumor- and T cell-intrinsic mechanisms of sensitization to checkpoint inhibition
+
+# Meta-analysis of tumor- and T cell-intrinsic mechanisms of sensitization to checkpoint inhibition
 PMID: [33508232](https://pubmed.ncbi.nlm.nih.gov/33508232/)
 
 First and last authors: Kevin Litchfield, Charles Swanton
@@ -16,4 +19,11 @@ First and last authors: Kevin Litchfield, Charles Swanton
 7. COSMIC mutational signatures v2: 1A_aging, 4_tobacco, 7_UV, 10_POLE, 2_13_APOBEC were significant
 8. Loss of 9q34 was associated with sensitization - TRAF2 gene is important. Selective pressure comes from other genes on chr9, including CDKN2A
 9. CCND1 amplification associated with CPI resistance
+
+# A review of author name disambiguation techniques for the PubMed bibliographic database
+
+Objective: 
+
+## Main points
+
 
