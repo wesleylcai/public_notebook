@@ -139,6 +139,9 @@ Regression model details
             2. Then plug in F_m-1(x) for Predicted, which for F_0 is the initial constant
             3. Then do this for each row per tree (r_im)
             4. The derivative is the "gradient" in "gradient boost"
+        2. Fit a regression tree to the r_im values and create terminal regions R_Jm for j=1..J_m
+            1. Just means use the residuals to create tree where the leaves are R_Jm. If one leaf has more than one residual, then average them.
+        3. For j = 1...Jm compute ![f17]
 
 
 
@@ -155,6 +158,7 @@ Regression model details
 [f14]: https://chart.apis.google.com/chart?cht=tx&chl=F_0(x)=argmin_\gamma\sum_{i=1}^{n}L(y_i,\\;\gamma)
 [f15]: https://chart.apis.google.com/chart?cht=tx&chl=r_{im}=-\left[\frac{\partial\\;L(y_i,F(x_i))}{\partial\\;F(x_i)}\right]_{F(x)=F_{m-1}(x)}\\;for\\;i=1,\\;...,\\;n
 [f16]: https://chart.apis.google.com/chart?cht=tx&chl=-\left[\frac{\partial\\;L(y_i,F(x_i))}{\partial\\;F(x_i)}\right]
+[f17]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma_{jm}=argmin_\gamma\sum_{x_i\in\\;R_{ij}}^{}L(y_i,\\;F_{m-1}(x_i)+\gamma)
 
 # Bias and Variance
 
