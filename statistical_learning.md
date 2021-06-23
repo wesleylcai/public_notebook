@@ -95,7 +95,7 @@ Objective: Understanding this to get into the guts of XGBoost
 
 Table 1
 
-Concept
+Concept: Gradient boost for regression
 
 1. Gradient boost is similar to Adaboost except it uses leaf instead of stump
 2. Then builds tree around leaf, constrained by pre-determined number of leaves. Unlike Adaboost, it scales all trees the same.
@@ -108,9 +108,18 @@ Algorithm
 3. Build a tree with column variables to predict residuals
     1. f more than 1 variable per leaf, calculate average of variables
     2. At this point, the tree is overfit; low bias but high variance.
-    3. Apply learning rate to scale contribution of new tree (0, 1)
+    3. Apply learning rate to scale contribution of new tree (0, 1). Usually 0.1.
 4. Create new pseudo-residuals with the newly built tree
 5. Build another tree with the newly predicted pseudo-residuals
+6. Now combine new tree with the old tree to create new pseudo-residuals
+    1. Average weight + (0.1)*Tree1 + (0.1)*Tree2
+7. Keep making trees until reach maximum specified or adding additional trees does not significantly reduce pseudo-residuals.
+
+Regression model details
+
+1. Loss function
+    1. Required for gradient boost
+    2. Most commonly 0.5*(Observed - Predicted)^2
 
 ## Elements of Statistical Learning
 
