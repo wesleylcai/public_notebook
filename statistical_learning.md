@@ -31,8 +31,8 @@ Concept
 Algorithm
 1. Each sample (row of table with column factors and classification as last column) gets a sample weight, starting as 1/N.
 2. First take the single factor that does the best job classifying samples (example chest pain in Table 1, to do this calculate Gini Impurity index for each stump)
-    1. Gini impurity for each leaf = 1 - P(Yes)^2 - P(No)^2
-    2. Index = (N_leaf1/N_total) * G(leaf1) + (N_leaf2/N_total) * G(leaf2)
+    1. `Gini impurity for each leaf = 1 - P(Yes)^2 - P(No)^2`
+    2. `Index = (N_leaf1/N_total) * G(leaf1) + (N_leaf2/N_total) * G(leaf2)`
 3. Calculate Gini Impurity index for each stump and use the stump with lowest index as the first stump
     1. Example: Chest pain yes -> how many correct yes and incorrect yes? Chest pain no -> how many correct no and incorrect no?
     2. <img src="images/statistical_learning/statquest.adaboost.f3.jpg" width="300">
@@ -118,7 +118,7 @@ Algorithm
 4. Create new pseudo-residuals with the newly built tree
 5. Build another tree with the newly predicted pseudo-residuals
 6. Now combine new tree with the old tree to create new pseudo-residuals
-    1. Average weight + (0.1)*Tree1 + (0.1)*Tree2
+    1. `Average weight + (0.1)*Tree1 + (0.1)*Tree2`
 7. Keep making trees until reach maximum specified or adding additional trees does not significantly reduce pseudo-residuals.
 
 Regression model details
@@ -141,7 +141,7 @@ Regression model details
 2. Step 2: Loop to generate M trees
     1. For m = 1 to M, in practice M = 100 trees
         1. Compute ![f15]
-            1. ![f16] just becomes (-1)*-(Observed-Predicted) = (Observed-Predicted) = Residual
+            1. ![f16] just becomes `(-1)*-(Observed-Predicted) = (Observed-Predicted) = Residual`
             2. Then plug in F_m-1(x) for Predicted, which for F_0 is the initial constant
             3. Then do this for each row per tree (r_im)
             4. The derivative is the "gradient" in "gradient boost"
