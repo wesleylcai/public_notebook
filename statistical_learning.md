@@ -308,7 +308,7 @@ Definition: tuning a regression function by adding an additional penalty term in
 1. Main idea is to find a line that doesn't fit training data so well. Introduce some bias to minimize variance.
     1. "By starting with a slightly worse fit, Ridge Regression can provide better long term predictions"
 2. Least squares minimizes sum of squared residuals
-3. Ridge regression minimizes sum of squared residuals + lambda X the slope^2
+3. Ridge regression minimizes ![f35]
     1. lambda X the slope^2 = Ridge regression penalty
 4. This penalizes high slopes, because a smaller slope means the dependent variable is less sensitive to changes in the independent variable
 5. Lambda is determined by trying different values and performing cross-validation (typically 10-fold, or 1:10 training:testing)
@@ -335,13 +335,20 @@ Definition: tuning a regression function by adding an additional penalty term in
 
 ### Lasso Regression
 
-1. Minimize sum of squared residuals + lambda X | slope |
+1. Minimize ![f36]
 2. Simply absolute value of slope instead of squared as in Ridge Regression
 3. Difference: Ridge Regression shrinks slope asymptotically to 0 whereas Lasso Regression can shrink slope to 0
     1. This enables exclusion of useless variables in large equations
 4. Lasso Regression good for when there are a lot of useless variables
     1. <img src="images/statistical_learning/statquest.regularization.f4.jpg" width="400">
 
+### Elastic-Net Regression
+
+1. Minimize ![f37]
+
+[f35]: https://chart.apis.google.com/chart?cht=tx&chl=sum\\;of\\;squared\\;residuals%2B\lambda\times\\;slope^2
+[f36]: https://chart.apis.google.com/chart?cht=tx&chl=sum\\;of\\;squared\\;residuals%2B\lambda\times\\;|slope|
+[f37]: https://chart.apis.google.com/chart?cht=tx&chl=sum\\;of\\;squared\\;residuals%2B\lambda_1\times\\;|variable_1|\\;%2B\\;...\\;%2B\\;|variable_x|\\;%2B\lambda_2\times\\;variable_{1}^2\\;%2B\\;...\\;%2B\\;variable_{x}^2
 
 ## Elements of Statistical Learning
 
