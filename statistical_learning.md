@@ -131,14 +131,14 @@ Algorithm
         1. ![f11]
         2. ![f12]
         3. ![f13]
-1. Step 1: Initialize model with constant value: ![f14]
+2. Step 1: Initialize model with constant value: ![f14]
     1. L(y, gamma) is loss function
     2. Gamma: predicted value
     3. Summation: add up all loss values
     4. argmin_gamma: find **predicted value** that minimizes sum of loss function
         1. This is accomplished by taking partial derivative of sum of loss function with respect to **predicted value** and setting = 0
     5. In this case the initial constant is the same as the average of all predictions. F_0(x) = average(y)
-2. Step 2: Loop to generate M trees
+3. Step 2: Loop to generate M trees
     1. For m = 1 to M, in practice M = 100 trees
         1. Compute ![f15]
             1. ![f16] just becomes `(-1)*-(Observed-Predicted) = (Observed-Predicted) = Residual`
@@ -156,6 +156,7 @@ Algorithm
             1. This just means to make a new prediction for each sample.
             2. The greek letter "v" is the learning rate, which we set to 0.1 usually
             3. <img src="images/statistical_learning/statquest.gradientboost.f2.jpg" width="300">
+4. Finally, when a new sample comes in, just run sample through the final formula
 
 ### Concept: Gradient boost for classification
 
@@ -215,7 +216,7 @@ Gradient boost usually uses 8-32 leaves for trees
         9. ![f33] when there is only 1 value in a leaf (for the first leaf)
         10. ![f34] When there are 2 values in a leaf (for the second leaf)
     4. Then update as in Regression model ![f19]
-
+4. Finally, when a new sample comes in, just run sample through the final formula
 
 ## Elements of Statistical Learning
 
