@@ -315,10 +315,21 @@ Objective: Regularization is used in XGBoost so I have to learn this first.
     2. Least squares: Minimize distance between measurements and means within each group.
         1. Size = 1.5 + 0.7 X High Fat Diet
         2. 0.7 is the "Diet difference"
-    3. Ridge regression: Minimize distance between measurements + lambda X Diet difference ^2
+    3. Ridge regression: Minimize distance between measurements + lambda X Diet difference^2
         1. Thus we want a smaller diet difference
 7. What about logistic regression?
     1. <img src="images/statistical_learning/statquest.regularization.f2.jpg" width="400">
+    2. Optimize sum of likelihoods because logistic regression is solved with maximum likelihood: sum of the likelihoods + lambda X slope^2
+    3. Thus we want a smaller slope so that the classification is less sensitive to changes in weight
+8. Extrapolation to multiple parameters
+    1. <img src="images/statistical_learning/statquest.regularization.f2.jpg" width="400">
+    2. In the above, Size = y-intercept + slope X Weight + diet difference X High Fat Diet
+    3. Ridge penalty will be lambda X (slope^2 + diet difference^2)
+9. Best thing about Ridge Regression:
+    1. In least squares, we need the same amount of measurements as the number of variables (Ex. we need 2 points on a 2D plane to find the best fit line, and 3 points on a 3D plane, etc)
+    2. So if we want to relate size of mice to 10,000 genes we need 10,000 mice
+    3. This is because you can create any line, plane, etc to minimize sum of squared residuals to 0 if you don't have all the constraints
+    2. Ridge regression also minimizes lambda + Slope^2
 
 ## Elements of Statistical Learning
 
