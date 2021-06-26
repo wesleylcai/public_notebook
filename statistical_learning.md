@@ -163,6 +163,8 @@ Concept: Gradient boost for classification
 
 Table 2
 
+Gradient boost usually uses 8-32 leaves for trees
+
 1. Similar to logistic regression. Initial prediction is log(odds). log(4/2) = 0.69 = 0.7 for initial leaf.
 2. Convert to probably with logistic function `P(odds) = e^log(odds)/(1+e^log(odds))` = 0.67 = 0.7
 3. Because probability > 0.5, then assign Yes for every row
