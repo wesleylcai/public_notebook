@@ -214,6 +214,7 @@ Gradient boost usually uses 8-32 leaves for trees
         8. For the [derivation.](https://youtu.be/StWY5QWMXCw?t=1252)
         9. ![f33] when there is only 1 value in a leaf (for the first leaf)
         10. ![f34] When there are 2 values in a leaf (for the second leaf)
+    4. Then update as in Regression model ![f19]
 
 
 ## Elements of Statistical Learning
