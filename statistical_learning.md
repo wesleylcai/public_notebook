@@ -349,6 +349,12 @@ Definition: tuning a regression function by adding an additional penalty term in
 2. This is just a combination of lasso and ridge regression, with lambdas being different
 3. Does a better job when there are tons of variables which may or may not be useful
 
+### Ridge vs Lasso Regression
+
+1. <img src="images/statistical_learning/statquest.regularization.f5.jpg" width="500">
+2. For Ridge Regression (left side), slope never = 0 even with large lambda
+3. For Lasso Regression (right side), slope = 0 when lambda = 40
+
 [f35]: https://chart.apis.google.com/chart?cht=tx&chl=sum\\;of\\;squared\\;residuals%2B\lambda\times\\;slope^2
 [f36]: https://chart.apis.google.com/chart?cht=tx&chl=sum\\;of\\;squared\\;residuals%2B\lambda\times\\;|slope|
 [f37]: https://chart.apis.google.com/chart?cht=tx&chl=sum\\;of\\;squared\\;residuals%2B\lambda_1\times\\;|variable_1|\\;%2B\\;...\\;%2B\\;|variable_x|\\;%2B\lambda_2\times\\;variable_{1}^2\\;%2B\\;...\\;%2B\\;variable_{x}^2
