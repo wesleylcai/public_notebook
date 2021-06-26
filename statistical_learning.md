@@ -173,7 +173,7 @@ Table 2
 7. Combine with formula `log(odds) + learning rate X output leaf`, then convert into probability with formula from (2)
 8. Use the new predicted probability to calculate residual
 9. Again create another tree using residuals, collapsing multiple values within a leaf using the formula from (6)
-10. The final classifier uses the formula `log(inital odds) + learning rate X tree 1 output + learning rate X tree 2 output, etc...`
+10. The final classifier uses the formula `predicted log odds = log(inital odds) + learning rate X tree 1 output + learning rate X tree 2 output, etc...` and then convert log odds to probability.
 
 ## Elements of Statistical Learning
 
