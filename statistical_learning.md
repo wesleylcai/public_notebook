@@ -351,7 +351,7 @@ Definition: tuning a regression function by adding an additional penalty term in
 
 ### Ridge vs Lasso Regression
 
-1. <img src="images/statistical_learning/statquest.regularization.f5.jpg" width="500">
+1. <img src="images/statistical_learning/statquest.regularization.f5.jpg" width="600">
 2. For Ridge Regression (left side), slope never = 0 even with large lambda
 3. For Lasso Regression (right side), slope = 0 when lambda = 40
 
