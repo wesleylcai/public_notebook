@@ -6,7 +6,10 @@
 [Bias and Variance](#bias-and-variance)
 
 [Boosting and Loss Functions](#boosting-and-loss-functions)
+
+[Regularization](#regularization)
 <!---toc--->
+
 
 
 
@@ -289,6 +292,18 @@ Objective: Why does boosting work? What are loss functions?
 
 ## Loss Functions
 1. The loss function for Adaboost is an exponential function L(y, f(x)) = exp(-y*f(x)). The loss function for gradient boosting is the partial differential dL/df, where L is the pseudo-residuals.
+
+## When to use?
+
+# Regularization
+
+Objective: 
+
+## Statquest
+
+
+## Elements of Statistical Learning
+
 
 ## When to use?
 

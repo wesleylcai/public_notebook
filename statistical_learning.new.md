@@ -6,7 +6,10 @@
 [Bias and Variance](#bias-and-variance)
 
 [Boosting and Loss Functions](#boosting-and-loss-functions)
+
+[Regularization](#regularization)
 <!---toc--->
+
 
 
 
@@ -31,8 +34,8 @@ Concept
 Algorithm
 1. Each sample (row of table with column factors and classification as last column) gets a sample weight, starting as 1/N.
 2. First take the single factor that does the best job classifying samples (example chest pain in Table 1, to do this calculate Gini Impurity index for each stump)
-    1. Gini impurity for each leaf = 1 - P(Yes)^2 - P(No)^2
-    2. Index = (N_leaf1/N_total) * G(leaf1) + (N_leaf2/N_total) * G(leaf2)
+    1. `Gini impurity for each leaf = 1 - P(Yes)^2 - P(No)^2`
+    2. `Index = (N_leaf1/N_total) * G(leaf1) + (N_leaf2/N_total) * G(leaf2)`
 3. Calculate Gini Impurity index for each stump and use the stump with lowest index as the first stump
     1. Example: Chest pain yes -> how many correct yes and incorrect yes? Chest pain no -> how many correct no and incorrect no?
     2. <img src="images/statistical_learning/statquest.adaboost.f3.jpg" width="300">
@@ -97,7 +100,7 @@ Objective: Understanding this to get into the guts of XGBoost
 
 ## Statquest
 
-Concept: Gradient boost for regression
+### Concept: Gradient boost for regression
 
 <img src="images/statistical_learning/statquest.gradientboost.t1.jpg" width="300">
 
@@ -118,10 +121,10 @@ Algorithm
 4. Create new pseudo-residuals with the newly built tree
 5. Build another tree with the newly predicted pseudo-residuals
 6. Now combine new tree with the old tree to create new pseudo-residuals
-    1. Average weight + (0.1)*Tree1 + (0.1)*Tree2
+    1. `Average weight + (0.1)*Tree1 + (0.1)*Tree2`
 7. Keep making trees until reach maximum specified or adding additional trees does not significantly reduce pseudo-residuals.
 
-Regression model details
+### Regression model details: Gradient boost for regression
 
 1. Input: Data and Differentiable loss function ![f9]
     1. Required for gradient boost
@@ -131,17 +134,17 @@ Regression model details
         1. ![f11]
         2. ![f12]
         3. ![f13]
-1. Step 1: Initialize model with constant value: ![f14]
+2. Step 1: Initialize model with constant value: ![f14]
     1. L(y, gamma) is loss function
     2. Gamma: predicted value
     3. Summation: add up all loss values
     4. argmin_gamma: find **predicted value** that minimizes sum of loss function
         1. This is accomplished by taking partial derivative of sum of loss function with respect to **predicted value** and setting = 0
     5. In this case the initial constant is the same as the average of all predictions. F_0(x) = average(y)
-2. Step 2: Loop to generate M trees
+3. Step 2: Loop to generate M trees
     1. For m = 1 to M, in practice M = 100 trees
         1. Compute ![f15]
-            1. ![f16] just becomes (-1)*-(Observed-Predicted) = (Observed-Predicted) = Residual
+            1. ![f16] just becomes `(-1)*-(Observed-Predicted) = (Observed-Predicted) = Residual`
             2. Then plug in F_m-1(x) for Predicted, which for F_0 is the initial constant
             3. Then do this for each row per tree (r_im)
             4. The derivative is the "gradient" in "gradient boost"
@@ -156,14 +159,67 @@ Regression model details
             1. This just means to make a new prediction for each sample.
             2. The greek letter "v" is the learning rate, which we set to 0.1 usually
             3. <img src="images/statistical_learning/statquest.gradientboost.f2.jpg" width="300">
+4. Finally, when a new sample comes in, just run sample through the final formula
 
-Concept: Gradient boost for classification
+### Concept: Gradient boost for classification
 
 <img src="images/statistical_learning/statquest.gradientboost.t3.jpg" width="300">
 
 Table 2
 
-1. Similar to logistic regression
+Gradient boost usually uses 8-32 leaves for trees
+
+1. Similar to logistic regression. Initial prediction is log(odds). log(4/2) = 0.69 = 0.7 for initial leaf.
+2. Convert to probably with logistic function `P(odds) = e^log(odds)/(1+e^log(odds))` = 0.67 = 0.7
+3. Because probability > 0.5, then assign Yes for every row
+4. Calculate pseudo-residuals for each row: `If Yes then (1 - predicted); If no then (predicted - 1)`
+    1. <img src="images/statistical_learning/statquest.gradientboost.f3.jpg" width="200">
+5. Again create leaves with the residuals
+6. Transform the leaves with the formula ![f20]
+7. Combine with formula `log(odds) + learning rate X output leaf`, then convert into probability with formula from (2)
+8. Use the new predicted probability to calculate residual
+9. Again create another tree using residuals, collapsing multiple values within a leaf using the formula from (6)
+10. The final classifier uses the formula `predicted log odds = log(inital odds) + learning rate X tree 1 output + learning rate X tree 2 output, etc...` and then convert log odds to probability.
+
+### Classification model details: Gradient boost for classification
+
+1. Input: Data ![f21], and a differentiable loss function ![f9]
+    1. x_i refers to row of measurements, y_i refers to classification output
+    2. Rationale of loss function
+        1. log(likelihood of the observed data given the prediction) = ![f22]
+        2. The better the prediction, the larger the log(likelihood) so we want to maximize log(likelihood)
+        3. Thus we want to make the loss function -log(likelihood)
+        4. ![f23]
+        5. Convert predicted probability to log(odds)
+        6. ![f24]
+    3. Show loss function is differentiable
+        1. ![f25]
+        2. ![f26]
+        3. also ![f27] so we can use either formula
+2. Step 1: Initialize model with constant value: ![f14]
+    1. y_i refers to observed values, gamma refers to log(odds)
+    2. Minimize by setting sum of derivatives = 0
+        1. <img src="images/statistical_learning/statquest.gradientboost.f4.jpg" width="200">
+        2. Use the above table as an example
+        3. `(-1+p) + (-1+p) + (-0+p) = 0`
+        4. `p = 2/3` which becomes `log(odds) = log(p/(1-p)) = log(2/1)`. This makes sense because 2 people love Troll 2 and 1 does not.
+        5. ![f28]
+3. Step 2: Same as step 2 for [Regression model](#regression-model-details-gradient-boost-for-regression)
+    1. First compute residuals: `r_i0 = (observed-0.67) = (1-0.67) = 0.33 for Loves Troll 2 and (0-0.67) = -0.67 for Does not love Troll 2`
+    2. Then fit regression tree for each variable
+    3. Then compute output value for each leaf, except this time instead of taking the derivative with respect to gamma for argmin, approximate with a second order Taylor Polynomial
+        1. ![f29]
+        2. Now take derivative with respect to gamma
+        3. ![f30]
+        4. Now set to 0 and solve with respect to gamma
+        5. ![f31]
+        6. With some calculus and algebra this simplifies to
+        7. ![f32]
+        8. For the [derivation.](https://youtu.be/StWY5QWMXCw?t=1252)
+        9. ![f33] when there is only 1 value in a leaf (for the first leaf)
+        10. ![f34] When there are 2 values in a leaf (for the second leaf)
+    4. Then update as in Regression model ![f19]
+4. Finally, when a new sample comes in, just run sample through the final formula
 
 ## Elements of Statistical Learning
 
@@ -181,7 +237,23 @@ Table 2
 [f17]: https://chart.apis.google.com/chart?cht=tx&chl=j=1,\\;...,J_m
 [f18]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma_{jm}=argmin_\gamma\sum_{x_i\in\\;R_{ij}}^{}L(y_i,\\;F_{m-1}(x_i)%2B\gamma)
 [f19]: https://chart.apis.google.com/chart?cht=tx&chl=F_m(x)=F_{m-1}(x)%2B\nu\sum_{j=1}^{J_m}\gamma_{jm}I(x\in\\;R_{jm})
+[f20]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
+[f21]: https://chart.apis.google.com/chart?cht=tx&chl={(x_i,y_i)}_{i=1}^{n}
+[f22]: https://chart.apis.google.com/chart?cht=tx&chl=\sum_{i=1}^{N}y_i\times\\;log(p)%2B(1-y_i)\times\\;log(1-p)
+[f23]: https://chart.apis.google.com/chart?cht=tx&chl=L(y,\\;F(p))=-[Observed\times\\;log(p)+(1-Observed)\times\\;log(1-p)]
+[f24]: https://chart.apis.google.com/chart?cht=tx&chl=L(y,\\;F(odds))=-Observed\times\\;log(odds)%2Blog(1%2Be^{log(odds)})
+[f25]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\partial}{\partial\\;log(odds)}-Observed\times\\;log(odds)%2Blog(1%2Be^{log(odds)})
+[f26]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2B\frac{e^{log(odds)}}{1%2Be^{log(odds)}}
+[f27]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2Bp
+[f28]: https://chart.apis.google.com/chart?cht=tx&chl=F_0(x)=log(\frac{2}{1})=0.69
+[f29]: https://chart.apis.google.com/chart?cht=tx&chl=L(y_1,F_{m-1}(x_1)%2B\gamma)\approx\\;L(y_1,F_{m-1}(x_1))%2B\frac{d}{dF}(y_1,F_{m-1}(x_1))\gamma%2B\frac{1}{2}\frac{d^2}{dF^2}(y_1,F_{m-1}(x_1))\gamma^2
+[f30]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\partial}{\partial\gamma}L(y_1,F_{m-1}(x_1)%2B\gamma)\approx\frac{d}{dF}(y_1,F_{m-1}(x_1))%2B\frac{d^2}{dF^2}(y_1,F_{m-1}(x_1))\gamma
+[f31]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma=\frac{-\frac{d}{dF}(y_1,F_{m-1}(x_1))}{\frac{d^2}{dF^2}(y_1,F_{m-1}(x_1))}
+[f32]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma=\frac{Observed-Predicted}{p\times(1-p)}=\frac{Residual}{p\times(1-p)}
+[f33]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma_{1,1}=\frac{Residual}{p\times(1-p)}=\frac{0.33}{0.67\times(1-0.67)}=1.5
+[f34]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma=\frac{Residual_2%2BResidual_3}{p_2\times(1-p_2)%2Bp_3\times(1-p_3)}=\frac{0.33%2B-0.67}{[0.67\times(1-0.67)]%2B[0.67\times(1-0.67)]}=-0.77
 
+[f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
 # Bias and Variance
 
@@ -204,6 +276,26 @@ Objective:
 ## When to use?
 
 # Boosting and Loss Functions
+
+Objective: Why does boosting work? What are loss functions?
+
+## Boosting
+
+[Why boosting?](https://jialinyi94.github.io/CIS_625_Final_Project.pdf) TL;DR Because it can give you the ground truth model for anything. It can give you the math formula to describe "dog."
+
+1. From a statistical point of view, "boosting is minimizing the empirical risk for an asymmetric loss function that penalizes more heavily on incorrect classifications" - Jialin Yi.
+2. [VC theory](https://en.wikipedia.org/wiki/Vapnik–Chervonenkis_theory) explains why minimizing empirical risk is **consistent** and thus works for classification.
+    1. [Consistency](https://en.wikipedia.org/wiki/Consistency_(statistics)) is a desired property of a statistical procedure as the items in a data set increases indefinitely. A consistent procedure is one such that the outcome of the procedure with unlimited data **should identify the underlying truth.**
+    2. "In statistical classification, a consistent classifier is one for which the probability of correct classification, given a training set, approaches, as the size of the training set increases, the best probability theoretically possible if the population distributions were fully known."
+    3. Because we want to minimize expected risk.
+    4. VC Inequality theorem states that empirical risk becomes a good proxy for expected risk as sampling increases.
+
+## Loss Functions
+1. The loss function for Adaboost is an exponential function L(y, f(x)) = exp(-y*f(x)). The loss function for gradient boosting is the partial differential dL/df, where L is the pseudo-residuals.
+
+## When to use?
+
+# Regularization
 
 Objective: 
 
