@@ -322,7 +322,7 @@ Objective: Regularization is used in XGBoost so I have to learn this first.
     2. Optimize sum of likelihoods because logistic regression is solved with maximum likelihood: sum of the likelihoods + lambda X slope^2
     3. Thus we want a smaller slope so that the classification is less sensitive to changes in weight
 8. Extrapolation to multiple parameters
-    1. <img src="images/statistical_learning/statquest.regularization.f3.jpg" width="400">
+    1. <img src="images/statistical_learning/statquest.regularization.f3.jpg" width="300">
     2. In the above, Size = y-intercept + slope X Weight + diet difference X High Fat Diet
     3. Ridge penalty will be lambda X (slope^2 + diet difference^2)
 9. Best thing about Ridge Regression:
