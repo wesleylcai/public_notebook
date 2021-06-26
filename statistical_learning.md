@@ -202,7 +202,9 @@ Gradient boost usually uses 8-32 leaves for trees
         5. ![f28]
 3. Step 2: Same as step 2 for [Regression model](#regression-model-details-gradient-boost-for-regression)
     1. First compute residuals: `r_i0 = (observed-0.67) = (1-0.67) = 0.33 for Loves Troll 2 and (0-0.67) = -0.67 for Does not love Troll 2`
-    2. Then fit regression tree: 
+    2. Then fit regression tree for each variable
+    3. Then compute output value for each leaf, except this time instead of taking the derivative with respect to gamma for argmin, approximate with a second order Taylor Polynomial
+        1. ![f29]
 
 ## Elements of Statistical Learning
 
@@ -229,6 +231,7 @@ Gradient boost usually uses 8-32 leaves for trees
 [f26]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2B\frac{e^{log(odds)}}{1%2Be^{log(odds)}}
 [f27]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2Bp
 [f28]: https://chart.apis.google.com/chart?cht=tx&chl=F_0(x)=log(\frac{2}{1})=0.69
+[f29]: https://chart.apis.google.com/chart?cht=tx&chl=L(y_1,F_{m-1}(x_1)+\gamma)\approx\\;L(y_1,F_{m-1}(x_1))%2B\frac{d}{dF}(y_1,F_{m-1}(x_1))\gamma%2B\frac{1}{2}\frac{d^2}{dF^2}(y_1,F_{m-1}(x_1))\gamma^2
 
 [f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
