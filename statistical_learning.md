@@ -183,6 +183,11 @@ Classification model details
     1. x_i refers to row of measurements, y_i refers to classification output
     2. Rationale of loss function
         1. log(likelihood of the observed data given the prediction) = ![f22]
+        2. The better the prediction, the larger the log(likelihood) so we want to maximize log(likelihood)
+        3. Thus we want to make the loss function -log(likelihood)
+        4. ![f23]
+        5. Convert predicted probability to log(odds)
+        6. ![f24]
 
 ## Elements of Statistical Learning
 
@@ -203,6 +208,8 @@ Classification model details
 [f20]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 [f21]: https://chart.apis.google.com/chart?cht=tx&chl={(x_i,y_i)}_{i=1}^{n}
 [f22]: https://chart.apis.google.com/chart?cht=tx&chl=\sum_{i=1}^{N}y_i\times\\;log(p)%2B(1-y_i)\times\\;log(1-p)
+[f23]: https://chart.apis.google.com/chart?cht=tx&chl=L(y,\\;F(p))=-[Observed\times\\;log(p)+(1-Observed)\times\\;log(1-p)]
+[f24]: https://chart.apis.google.com/chart?cht=tx&chl=L(y,\\;F(odds))=-Observed\times\\;log(odds)%2Blog(1%2Be^{log(odds)})
 
 [f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
