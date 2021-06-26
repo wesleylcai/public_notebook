@@ -205,6 +205,16 @@ Gradient boost usually uses 8-32 leaves for trees
     2. Then fit regression tree for each variable
     3. Then compute output value for each leaf, except this time instead of taking the derivative with respect to gamma for argmin, approximate with a second order Taylor Polynomial
         1. ![f29]
+        2. Now take derivative with respect to gamma
+        3. ![f30]
+        4. Now set to 0 and solve with respect to gamma
+        5. ![f31]
+        6. With some calculus and algebra this simplifies to
+        7. ![f32]
+        8. For the [derivation.](https://youtu.be/StWY5QWMXCw?t=1252)
+        9. ![f33] when there is only 1 value in a leaf (for the first leaf)
+        10. ![f34] When there are 2 values in a leaf (for the second leaf)
+
 
 ## Elements of Statistical Learning
 
@@ -231,7 +241,12 @@ Gradient boost usually uses 8-32 leaves for trees
 [f26]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2B\frac{e^{log(odds)}}{1%2Be^{log(odds)}}
 [f27]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2Bp
 [f28]: https://chart.apis.google.com/chart?cht=tx&chl=F_0(x)=log(\frac{2}{1})=0.69
-[f29]: https://chart.apis.google.com/chart?cht=tx&chl=L(y_1,F_{m-1}(x_1)+\gamma)\approx\\;L(y_1,F_{m-1}(x_1))%2B\frac{d}{dF}(y_1,F_{m-1}(x_1))\gamma%2B\frac{1}{2}\frac{d^2}{dF^2}(y_1,F_{m-1}(x_1))\gamma^2
+[f29]: https://chart.apis.google.com/chart?cht=tx&chl=L(y_1,F_{m-1}(x_1)%2B\gamma)\approx\\;L(y_1,F_{m-1}(x_1))%2B\frac{d}{dF}(y_1,F_{m-1}(x_1))\gamma%2B\frac{1}{2}\frac{d^2}{dF^2}(y_1,F_{m-1}(x_1))\gamma^2
+[f30]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\partial}{\partial\gamma}L(y_1,F_{m-1}(x_1)%2B\gamma)\approx\frac{d}{dF}(y_1,F_{m-1}(x_1))%2B\frac{d^2}{dF^2}(y_1,F_{m-1}(x_1))\gamma
+[f31]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma=\frac{-\frac{d}{dF}(y_1,F_{m-1}(x_1))}{\frac{d^2}{dF^2}(y_1,F_{m-1}(x_1))}
+[f32]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma=\frac{Observed-Predicted}{p\times(1-p)}=\frac{Residual}{p\times(1-p)}
+[f33]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma_{1,1}=\frac{Residual}{p\times(1-p)}=\frac{0.33}{0.67\times(1-0.67)}=1.5
+[f34]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma=\frac{Residual_2%2BResidual_3}{p_2\times(1-p_2)%2Bp_3\times(1-p_3)}=\frac{0.33%2B-0.67}{[0.67\times(1-0.67)]%2B[0.67\times(1-0.67)]}=-0.77
 
 [f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
