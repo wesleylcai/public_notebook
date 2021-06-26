@@ -301,6 +301,8 @@ Objective: Regularization is used in XGBoost so I have to learn this first.
 
 ## Statquest
 
+Definition: tuning a regression function by adding an additional penalty term in the error function.
+
 ### Ridge Regression
 
 1. Main idea is to find a line that doesn't fit training data so well. Introduce some bias to minimize variance.
@@ -330,6 +332,12 @@ Objective: Regularization is used in XGBoost so I have to learn this first.
     2. So if we want to relate size of mice to 10,000 genes we need 10,000 mice
     3. This is because you can create any line, plane, etc to minimize sum of squared residuals to 0 if you don't have all the constraints
     2. Ridge regression also minimizes lambda + Slope^2
+
+### Lasso Regression
+
+1. Minimize sum of squared residuals + lambda X | slope |
+2. Simply absolute value of slope instead of squared as in Ridge Regression
+
 
 ## Elements of Statistical Learning
 
