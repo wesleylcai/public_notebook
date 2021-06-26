@@ -180,6 +180,9 @@ Gradient boost usually uses 8-32 leaves for trees
 Classification model details
 
 1. Input: Data ![f21], and a differentiable loss function ![f9]
+    1. x_i refers to row of measurements, y_i refers to classification output
+    2. Rationale of loss function
+        1. log(likelihood of the observed data given the prediction) = ![f22]
 
 ## Elements of Statistical Learning
 
@@ -198,7 +201,8 @@ Classification model details
 [f18]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma_{jm}=argmin_\gamma\sum_{x_i\in\\;R_{ij}}^{}L(y_i,\\;F_{m-1}(x_i)%2B\gamma)
 [f19]: https://chart.apis.google.com/chart?cht=tx&chl=F_m(x)=F_{m-1}(x)%2B\nu\sum_{j=1}^{J_m}\gamma_{jm}I(x\in\\;R_{jm})
 [f20]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
-[f21]: https://chart.apis.google.com/chart?cht=tx&chl={{{(x_i,y_i)}}}_{i=1}^{n}
+[f21]: https://chart.apis.google.com/chart?cht=tx&chl={(x_i,y_i)}_{i=1}^{n}
+[f22]: https://chart.apis.google.com/chart?cht=tx&chl=\sum_{i=1}^{N}y_i\times\\;log(p)%2B(1-y_i)\times\\;log(1-p)
 
 [f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
