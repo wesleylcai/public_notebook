@@ -192,6 +192,15 @@ Classification model details
         1. ![f25]
         2. ![f26]
         3. also ![f27] so we can use either formula
+2. Step 1: Initialize model with constant value: ![f14]
+    1. y_i refers to observed values, gamma refers to log(odds)
+    2. Minimize by setting sum of derivatives = 0
+        1. <img src="images/statistical_learning/statquest.gradientboost.f4.jpg" width="200">
+        2. Use the above table as an example
+        3. `(-1+p) + (-1+p) + (-0+p) = 0`
+        4. `p = 2/3` which becomes `log(odds) = log(p/(1-p)) = log(2/1)`. This makes sense because 2 people love Troll 2 and 1 does not.
+        5. ![f28]
+    
 
 ## Elements of Statistical Learning
 
@@ -217,6 +226,7 @@ Classification model details
 [f25]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\partial}{\partial\\;log(odds)}-Observed\times\\;log(odds)%2Blog(1%2Be^{log(odds)})
 [f26]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2B\frac{e^{log(odds)}}{1%2Be^{log(odds)}}
 [f27]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2Bp
+[f28]: https://chart.apis.google.com/chart?cht=tx&chl=F_0(x)=log(\frac{2}{1}=0.69)
 
 [f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
