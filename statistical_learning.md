@@ -297,10 +297,22 @@ Objective: Why does boosting work? What are loss functions?
 
 # Regularization
 
-Objective: 
+Objective: Regularization is used in XGBoost so I have to learn this first.
 
 ## Statquest
 
+### Ridge Regression
+
+1. Main idea is to find a line that doesn't fit training data so well. Introduce some bias to minimize variance.
+    1. "By starting with a slightly worse fit, Ridge Regression can provide better long term predictions"
+2. Least squares minimizes sum of squared residuals
+3. Ridge regression minimizes sum of squared residuals + lambda X the slope^2
+    1. lambda X the slope^2 = Ridge regression penalty
+4. This penalizes high slopes, because a smaller slope means the dependent variable is less sensitive to changes in the independent variable
+5. Lambda is determined by trying different values and performing cross-validation (typically 10-fold, or 1:10 training:testing)
+6. This is straightforward for continuous variables, but what about discrete variables?
+    1. <img src="images/statistical_learning/statquest.regularization.f1.jpg" width="300">
+    2. Least squares: Size = 1.5 + 0.7 X High Fat Diet
 
 ## Elements of Statistical Learning
 
