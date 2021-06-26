@@ -163,7 +163,11 @@ Concept: Gradient boost for classification
 
 Table 2
 
-1. Similar to logistic regression
+1. Similar to logistic regression. Initial prediction is log(odds). log(4/2) = 0.69 = 0.7 for initial leaf.
+2. Convert to probably with logistic function `P(odds) = e^log(odds)/(1+e^log(odds))` = 0.67 = 0.7
+3. Because probability > 0.5, then assign Yes for every row
+4. Calculate pseudo-residuals for each row: `If Yes then (1 - predicted); If no then (predicted - 1)`
+    1. <img src="images/statistical_learning/statquest.gradientboost.f3.jpg" width="200">
 
 ## Elements of Statistical Learning
 
