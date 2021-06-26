@@ -170,6 +170,10 @@ Table 2
     1. <img src="images/statistical_learning/statquest.gradientboost.f3.jpg" width="200">
 5. Again create leaves with the residuals
 6. Transform the leaves with the formula ![f20]
+7. Combine with formula `log(odds) + learning rate X output leaf`, then convert into probability with formula from (2)
+8. Use the new predicted probability to calculate residual
+9. Again create another tree using residuals, collapsing multiple values within a leaf using the formula from (6)
+10. The final classifier uses the formula `log(inital odds) + learning rate X tree 1 output + learning rate X tree 2 output, etc...`
 
 ## Elements of Statistical Learning
 
