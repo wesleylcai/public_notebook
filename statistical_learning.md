@@ -337,6 +337,10 @@ Definition: tuning a regression function by adding an additional penalty term in
 
 1. Minimize sum of squared residuals + lambda X | slope |
 2. Simply absolute value of slope instead of squared as in Ridge Regression
+3. Difference: Ridge Regression shrinks slope asymptotically to 0 whereas Lasso Regression can shrink slope to 0
+    1. This enables exclusion of useless variables in large equations
+4. Lasso Regression good for when there are a lot of useless variables
+    1. <img src="images/statistical_learning/statquest.regularization.f4.jpg" width="400">
 
 
 ## Elements of Statistical Learning
