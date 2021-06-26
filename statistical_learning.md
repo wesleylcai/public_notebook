@@ -191,6 +191,7 @@ Classification model details
     3. Show loss function is differentiable
         1. ![f25]
         2. ![f26]
+        3. also ![f27] so we can use either formula
 
 ## Elements of Statistical Learning
 
@@ -215,6 +216,7 @@ Classification model details
 [f24]: https://chart.apis.google.com/chart?cht=tx&chl=L(y,\\;F(odds))=-Observed\times\\;log(odds)%2Blog(1%2Be^{log(odds)})
 [f25]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\partial}{\partial\\;log(odds)}-Observed\times\\;log(odds)%2Blog(1%2Be^{log(odds)})
 [f26]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2B\frac{e^{log(odds)}}{1%2Be^{log(odds)}}
+[f27]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2Bp
 
 [f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
