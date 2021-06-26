@@ -177,6 +177,10 @@ Gradient boost usually uses 8-32 leaves for trees
 9. Again create another tree using residuals, collapsing multiple values within a leaf using the formula from (6)
 10. The final classifier uses the formula `predicted log odds = log(inital odds) + learning rate X tree 1 output + learning rate X tree 2 output, etc...` and then convert log odds to probability.
 
+Classification model details
+
+1. Input: Data ![f21], and a differentiable loss function ![f9]
+
 ## Elements of Statistical Learning
 
 
@@ -194,8 +198,9 @@ Gradient boost usually uses 8-32 leaves for trees
 [f18]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma_{jm}=argmin_\gamma\sum_{x_i\in\\;R_{ij}}^{}L(y_i,\\;F_{m-1}(x_i)%2B\gamma)
 [f19]: https://chart.apis.google.com/chart?cht=tx&chl=F_m(x)=F_{m-1}(x)%2B\nu\sum_{j=1}^{J_m}\gamma_{jm}I(x\in\\;R_{jm})
 [f20]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
+[f21]: https://chart.apis.google.com/chart?cht=tx&chl={\{(x_i,y_i)\}}_{i=1}^{n}
 
-[f21]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
+[f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
 # Bias and Variance
 
