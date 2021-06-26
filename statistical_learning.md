@@ -187,7 +187,7 @@ Table 2
 [f17]: https://chart.apis.google.com/chart?cht=tx&chl=j=1,\\;...,J_m
 [f18]: https://chart.apis.google.com/chart?cht=tx&chl=\gamma_{jm}=argmin_\gamma\sum_{x_i\in\\;R_{ij}}^{}L(y_i,\\;F_{m-1}(x_i)%2B\gamma)
 [f19]: https://chart.apis.google.com/chart?cht=tx&chl=F_m(x)=F_{m-1}(x)%2B\nu\sum_{j=1}^{J_m}\gamma_{jm}I(x\in\\;R_{jm})
-[f20]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous Prob_i\times(1-Prevous Prob_i)]}
+[f20]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\;Residual_i}{\sum\;[Previous Prob_i\times(1-Prevous Prob_i)]}
 
 
 # Bias and Variance
