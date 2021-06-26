@@ -97,7 +97,7 @@ Objective: Understanding this to get into the guts of XGBoost
 
 ## Statquest
 
-Concept: Gradient boost for regression
+### Concept: Gradient boost for regression
 
 <img src="images/statistical_learning/statquest.gradientboost.t1.jpg" width="300">
 
@@ -121,7 +121,7 @@ Algorithm
     1. `Average weight + (0.1)*Tree1 + (0.1)*Tree2`
 7. Keep making trees until reach maximum specified or adding additional trees does not significantly reduce pseudo-residuals.
 
-Regression model details
+### Regression model details: Gradient boost for regression
 
 1. Input: Data and Differentiable loss function ![f9]
     1. Required for gradient boost
@@ -157,7 +157,7 @@ Regression model details
             2. The greek letter "v" is the learning rate, which we set to 0.1 usually
             3. <img src="images/statistical_learning/statquest.gradientboost.f2.jpg" width="300">
 
-Concept: Gradient boost for classification
+### Concept: Gradient boost for classification
 
 <img src="images/statistical_learning/statquest.gradientboost.t3.jpg" width="300">
 
@@ -177,7 +177,7 @@ Gradient boost usually uses 8-32 leaves for trees
 9. Again create another tree using residuals, collapsing multiple values within a leaf using the formula from (6)
 10. The final classifier uses the formula `predicted log odds = log(inital odds) + learning rate X tree 1 output + learning rate X tree 2 output, etc...` and then convert log odds to probability.
 
-Classification model details
+### Classification model details: Gradient boost for classification
 
 1. Input: Data ![f21], and a differentiable loss function ![f9]
     1. x_i refers to row of measurements, y_i refers to classification output
@@ -200,7 +200,9 @@ Classification model details
         3. `(-1+p) + (-1+p) + (-0+p) = 0`
         4. `p = 2/3` which becomes `log(odds) = log(p/(1-p)) = log(2/1)`. This makes sense because 2 people love Troll 2 and 1 does not.
         5. ![f28]
-    
+3. Step 2: Same as step 2 for [Regression model](#regression-model-details-gradient-boost-for-regression)
+    1. First compute residuals: `r_i0 = (observed-0.67) = (1-0.67) = 0.33 for Loves Troll 2 and (0-0.67) = -0.67 for Does not love Troll 2`
+    2. Then fit regression tree: 
 
 ## Elements of Statistical Learning
 
