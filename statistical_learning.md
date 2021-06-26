@@ -188,6 +188,9 @@ Classification model details
         4. ![f23]
         5. Convert predicted probability to log(odds)
         6. ![f24]
+    3. Show loss function is differentiable
+        1. ![f25]
+        2. ![f26]
 
 ## Elements of Statistical Learning
 
@@ -210,6 +213,8 @@ Classification model details
 [f22]: https://chart.apis.google.com/chart?cht=tx&chl=\sum_{i=1}^{N}y_i\times\\;log(p)%2B(1-y_i)\times\\;log(1-p)
 [f23]: https://chart.apis.google.com/chart?cht=tx&chl=L(y,\\;F(p))=-[Observed\times\\;log(p)+(1-Observed)\times\\;log(1-p)]
 [f24]: https://chart.apis.google.com/chart?cht=tx&chl=L(y,\\;F(odds))=-Observed\times\\;log(odds)%2Blog(1%2Be^{log(odds)})
+[f25]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\partial}{\partial\\;log(odds)}-Observed\times\\;log(odds)%2Blog(1%2Be^{log(odds)})
+[f26]: https://chart.apis.google.com/chart?cht=tx&chl==-Observed%2B\frac{e^{log(odds)}}{1%2Be^{log(odds)}}
 
 [f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
