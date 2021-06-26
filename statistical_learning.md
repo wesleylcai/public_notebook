@@ -312,7 +312,13 @@ Objective: Regularization is used in XGBoost so I have to learn this first.
 5. Lambda is determined by trying different values and performing cross-validation (typically 10-fold, or 1:10 training:testing)
 6. This is straightforward for continuous variables, but what about discrete variables?
     1. <img src="images/statistical_learning/statquest.regularization.f1.jpg" width="300">
-    2. Least squares: Size = 1.5 + 0.7 X High Fat Diet
+    2. Least squares: Minimize distance between measurements and means within each group.
+        1. Size = 1.5 + 0.7 X High Fat Diet
+        2. 0.7 is the "Diet difference"
+    3. Ridge regression: Minimize distance between measurements + lambda X Diet difference ^2
+        1. Thus we want a smaller diet difference
+7. What about logistic regression?
+    1. <img src="images/statistical_learning/statquest.regularization.f2.jpg" width="400">
 
 ## Elements of Statistical Learning
 
