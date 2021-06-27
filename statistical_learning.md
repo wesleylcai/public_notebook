@@ -332,7 +332,7 @@ Definition: tuning a regression function by adding an additional penalty term in
     2. So if we want to relate size of mice to 10,000 genes we need 10,000 mice
     3. This is because you can create any line, plane, etc to minimize sum of squared residuals to 0 if you don't have all the constraints
     2. Ridge regression also minimizes lambda + Slope^2
-10. Ridge Regression good for when there are a lot of useful variables
+10. Ridge Regression good for when there are a lot of useful variables test
 
 ### Lasso Regression
 
