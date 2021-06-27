@@ -18,7 +18,7 @@
 
 # AdaBoost
 
-I'm learning this method to gain a fundamental understanding of XGBoost, which is a popular classifier algo and used in Litchfield et al, 2021.
+I'm learning this method to gain a fundamental understanding of XGBoost, which is a popular classifier algo and used in Litchfield et al, 2021. Check out [this blog post.](https://www.mygreatlearning.com/blog/adaboost-algorithm/)
 
 #### StatQuest
 <img src="images/statistical_learning/statquest.adaboost.t1.jpg" width="300">
