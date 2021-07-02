@@ -33,8 +33,7 @@ First and last authors: Kevin Litchfield, Charles Swanton
     1. Records contain at least title and author list
     2. Email, affiliation, venue, abstract, keywords, MeSH terms
     3. S={s_1, ..., s_N} into set of M(<=N) clusters C={C_1, ..., C_M} so each cluster C_i contains all and only all references to same real-world author
-2. Evaluation measures used in literature
-    0. TP = total number of pairs correctly assigned to same cluster, TN = total number of pairs correctly assigned to different clusters, FP = total number of pairs incorrectly assigned to same cluster, FN = total number of pairs incorrectly assigned to different clusters. S = TP + TN + FP + FN
+2. Evaluation measures used in literature: TP = total number of pairs correctly assigned to same cluster, TN = total number of pairs correctly assigned to different clusters, FP = total number of pairs incorrectly assigned to same cluster, FN = total number of pairs incorrectly assigned to different clusters. S = TP + TN + FP + FN
     1. Accuracy = (TP + TN)/S
     2. Pairwise precision pp = TP/(TP + FP)
         1. Fraction of pairs in cluster being  co-referent
@@ -42,7 +41,7 @@ First and last authors: Kevin Litchfield, Charles Swanton
         1. Fraction of co-referent pairs put into same cluster
     4. Pairwise F1-score pf1 = (2 X pp X pr)/(ppp + pr)
         1. Harmonic mean of pp and pr
-        
+
 ## Ideas for the future
 
 1. Feature learning to discover which features most prominently identify authors
