@@ -81,15 +81,16 @@ First and last authors: Kevin Litchfield, Charles Swanton
     15. Fraction of references in automatically generated cluster containing s_i that truly refer to the individual identified by s_i ![f4]
         1. B-CUBED precision is average precision of all author references in the dataset ![f5]
     16. Recall of reference s_i is ![f6]
-        1. B-CUBED recall is average recall of all author references in the dataset ![f5]
+        1. B-CUBED recall is average recall of all author references in the dataset ![f7]
     17. B-CUBED F1-score `bf1 = (2 x bp x br)/(bp + br)`
 
 [f1]: https://chart.apis.google.com/chart?cht=tx&chl=ACP=\frac{1}{N}\sum_{i=1}^{i=M_{gen}}\sum_{i=1}^{j=M_{gold}}\frac{n_{ij}^2}{n_i}
 [f2]: https://chart.apis.google.com/chart?cht=tx&chl=AAP=\frac{1}{N}\sum_{i=1}^{i=M_{gold}}\sum_{i=1}^{j=M_{gen}}\frac{n_{ij}^2}{n_i}
 [f3]: https://chart.apis.google.com/chart?cht=tx&chl=K=\sqrt{ACP\times\\;AAP}
 [f4]: https://chart.apis.google.com/chart?cht=tx&chl=p(s_i)=\frac{|s\in\\;V(s_i)\\;:\\;C(s)=C(s_i)|}{|V(s_i)|}
-[f5]: https://chart.apis.google.com/chart?cht=tx&chl=
-[f6]: https://chart.apis.google.com/chart?cht=tx&chl=
+[f5]: https://chart.apis.google.com/chart?cht=tx&chl=bp=\frac{\sum_{s\in\\;S}^{}p(s)}{N}
+[f6]: https://chart.apis.google.com/chart?cht=tx&chl=r(s_i)=\frac{|s\in\\;C(s_i)\\;:\\;V(s)=V(s_i)|}{|C(s_i)|}
+[f7]: https://chart.apis.google.com/chart?cht=tx&chl=br=\frac{\sum_{s\in\\;S}^{}r(s)}{N}
 
 ## Ideas for the future
 
