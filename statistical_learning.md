@@ -17,8 +17,9 @@
 [Documentation for google laTex](https://developers.google.com/chart/infographics/docs/formulas?hl=en)
 
 # AdaBoost
+[back to toc](#table-of-contents)
 
-I'm learning this method to gain a fundamental understanding of XGBoost, which is a popular classifier algo and used in Litchfield et al, 2021. Check out [this blog post.](https://www.mygreatlearning.com/blog/adaboost-algorithm/)
+Objective: I'm learning this method to gain a fundamental understanding of XGBoost, which is a popular classifier algo and used in Litchfield et al, 2021. Check out [this blog post.](https://www.mygreatlearning.com/blog/adaboost-algorithm/)
 
 #### StatQuest
 <img src="images/statistical_learning/statquest.adaboost.t1.jpg" width="300">
@@ -95,6 +96,7 @@ The I() function must output either -1 or 1, I believe.
 This looks like it's best for binary classification.
 
 # Gradient Boost
+[back to toc](#table-of-contents)
 
 Objective: Understanding this to get into the guts of XGBoost
 
@@ -256,6 +258,7 @@ Gradient boost usually uses 8-32 leaves for trees
 [f40]: https://chart.apis.google.com/chart?cht=tx&chl=\frac{\sum\\;Residual_i}{\sum\\;[Previous\\;Probability_i\times(1-Previous\\;Probability_i)]}
 
 # Bias and Variance
+[back to toc](#table-of-contents)
 
 Objective: 
 
@@ -276,6 +279,7 @@ Objective:
 ## When to use?
 
 # Boosting and Loss Functions
+[back to toc](#table-of-contents)
 
 Objective: Why does boosting work? What are loss functions?
 
@@ -296,6 +300,7 @@ Objective: Why does boosting work? What are loss functions?
 ## When to use?
 
 # Regularization
+[back to toc](#table-of-contents)
 
 Objective: Regularization is used in XGBoost so I have to learn this first.
 
